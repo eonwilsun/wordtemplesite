@@ -1,27 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>WordTemple — Site</title>
-    <style>
-      body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;margin:40px;color:#222}
-      a{color:#0366d6}
-      .wrap{max-width:900px;margin:0 auto}
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <h1>WordTemple</h1>
-      <p>Welcome — this is the public site for WordTemple. If you reached this page from the Play Store, this site is used to host <code>app-ads.txt</code> for AdMob verification.</p>
-      <p>If you are the developer and need to update the site files, edit <code>app-ads.txt</code> or replace this page with your built web app and push to the <code>main</code> branch.</p>
-      <p>Quick links:</p>
-      <ul>
-        <li><a href="/app-ads.txt">app-ads.txt</a> — AdMob authorized sellers file</li>
-        <li><a href="https://github.com/ianswiis/wordtemplesite">Repository (when created)</a></li>
-      </ul>
-      <hr />
-      <p style="color:#666">This page and the app-ads.txt file are intentionally minimal to ensure AdMob and Play Console can fetch the file at <code>/app-ads.txt</code>.</p>
-    </div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Temple - Complete the Temple Challenge!</title>
+    <meta name="description" content="Word Temple is now available to play from the Google Play Store! Download and Play Word Temple Now!">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Word Temple</a>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Word Temple</h1>
+                <p class="hero-subtitle">Complete the Temple challenge!</p>
+                <button class="cta-button" onclick="playGame()">Play Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <h2>Word Temple is now available to play from the Google Play Store!</h2>
+            <p>Download and Play Word Temple Now!</p>
+            <a href="#" class="download-button" onclick="playGame()">Play Now</a>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section class="how-to-play">
+        <div class="container">
+            <h2 class="section-title">How to Play</h2>
+            <div class="gameplay-grid">
+                <div class="game-demo">
+                    <div class="game-board">
+                        <div class="letter-grid">
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                        </div>
+                        <div class="letter-grid">
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                            <div class="letter-tile"></div>
+                        </div>
+                        <div class="letter-grid">
+                            <div class="letter-tile filled">G</div>
+                            <div class="letter-tile filled">O</div>
+                            <div class="letter-tile filled">F</div>
+                            <div class="letter-tile filled">M</div>
+                            <div class="letter-tile filled">E</div>
+                        </div>
+                        <div class="game-controls">
+                            <button class="game-btn">New Game</button>
+                            <button class="game-btn">Clear Pyramid</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="instructions">
+                    <h3>Use the letters provided in the grid to form and find the hidden words in the Temple rows.</h3>
+                    <p><strong>Complete all rows to win the game!</strong></p>
+                    <p>Be a part of the challenge and test your brain power!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Difficulty Section -->
+    <section class="difficulty-section">
+        <div class="container">
+            <h2 class="section-title">It's Not as Easy as You Think!</h2>
+            <div class="difficulty-grid">
+                <!-- Easy -->
+                <div class="difficulty-card">
+                    <div class="card-header easy">Easy</div>
+                    <div class="card-content">
+                        <div class="phone-mockup">
+                            <h4>WORD TEMPLE</h4>
+                            <p>Easy Wins: -</p>
+                            <div class="mockup-grid">
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile">G</div>
+                                <div class="mockup-tile">O</div>
+                                <div class="mockup-tile">F</div>
+                                <div class="mockup-tile">M</div>
+                                <div class="mockup-tile">E</div>
+                            </div>
+                            <div class="game-controls">
+                                <button class="game-btn">New Game</button>
+                                <button class="game-btn">Clear Pyramid</button>
+                                <button class="game-btn">Menu</button>
+                            </div>
+                        </div>
+                        <p>Play on easy for the most relaxing and easiest time.</p>
+                    </div>
+                </div>
+
+                <!-- Medium -->
+                <div class="difficulty-card">
+                    <div class="card-header medium">Medium</div>
+                    <div class="card-content">
+                        <div class="phone-mockup">
+                            <h4>WORD TEMPLE</h4>
+                            <p>Medium Wins: -</p>
+                            <div class="mockup-grid">
+                                <div class="mockup-tile">U</div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile">A</div>
+                                <div class="mockup-tile">X</div>
+                                <div class="mockup-tile">E</div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">F</div>
+                                <div class="mockup-tile">M</div>
+                                <div class="mockup-tile">P</div>
+                                <div class="mockup-tile">A</div>
+                                <div class="mockup-tile">M</div>
+                                <div class="mockup-tile">P</div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">X</div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile">U</div>
+                                <div class="mockup-tile">F</div>
+                            </div>
+                            <div class="game-controls">
+                                <button class="game-btn">Clear Pyramid</button>
+                                <button class="game-btn">Menu</button>
+                            </div>
+                        </div>
+                        <p>Think easy is too easy! Why don't you try medium and see how hard this game really is.</p>
+                    </div>
+                </div>
+
+                <!-- Hard -->
+                <div class="difficulty-card">
+                    <div class="card-header hard">Hard</div>
+                    <div class="card-content">
+                        <div class="phone-mockup">
+                            <h4>WORD TEMPLE</h4>
+                            <p>Hard Wins: -</p>
+                            <div class="mockup-grid">
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile">A</div>
+                                <div class="mockup-tile">E</div>
+                                <div class="mockup-tile"></div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile">P</div>
+                                <div class="mockup-tile">U</div>
+                                <div class="mockup-tile">D</div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile">E</div>
+                                <div class="mockup-tile">B</div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">S</div>
+                                <div class="mockup-tile">J</div>
+                                <div class="mockup-tile">A</div>
+                                <div class="mockup-tile">P</div>
+                                <div class="mockup-tile">B</div>
+                                <div class="mockup-tile">D</div>
+                                <div class="mockup-tile">S</div>
+                            </div>
+                            <div class="game-controls">
+                                <button class="game-btn">Clear Pyramid</button>
+                                <button class="game-btn">Menu</button>
+                                <button class="game-btn">Play</button>
+                                <button class="game-btn">Menu</button>
+                            </div>
+                        </div>
+                        <p>Join the small percentage of people that can achieve the impossible and complete the temple challenge on hard.</p>
+                    </div>
+                </div>
+
+                <!-- Leaderboards -->
+                <div class="difficulty-card">
+                    <div class="card-header leaderboard">Leaderboards</div>
+                    <div class="card-content">
+                        <div class="phone-mockup" style="background: linear-gradient(135deg, #9C27B0, #E91E63);">
+                            <h4>Statistics</h4>
+                            <p>Your wins</p>
+                            <table class="stats-table">
+                                <tr>
+                                    <td>Easy Wins</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <td>Medium Wins</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr>
+                                    <td>Hard Wins</td>
+                                    <td>2</td>
+                                </tr>
+                            </table>
+                            <h5>Top 5 Players</h5>
+                            <p style="font-size: 0.8rem;">All wins counted</p>
+                            <p style="font-size: 0.8rem;">1. Jammer: 76<br>2. Eon: 55<br>3. WurzelGamer: 4</p>
+                            <h5>Top 5 Medium Players</h5>
+                            <p style="font-size: 0.8rem;">Only medium wins counted</p>
+                        </div>
+                        <p>See if you are good enough to get on the leaderboards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Stay connected for updates and events.</h3>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-links">
+                    <p>Weston-super-Mare<br>England</p>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">f</a>
+                <a href="#" class="social-link">@</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 by Word Temple. Powered and secured by <a href="https://www.wix.com" style="color: #ff6b3d;">Wix</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
 </html>
