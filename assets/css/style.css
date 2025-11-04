@@ -344,8 +344,8 @@ body {
 .social-links {
     display: flex;
     gap: 15px;
-    justify-content: center;
-    margin: 20px 0;
+    justify-content: flex-start;
+    margin: 20px 0 0 0;
 }
 
 .social-link {
@@ -359,6 +359,8 @@ body {
     text-decoration: none;
     color: #666;
     transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .social-link:hover {
