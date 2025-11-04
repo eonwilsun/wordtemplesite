@@ -81,12 +81,8 @@ function animateGameDemo() {
     }, 3000);
 }
 
-// Play button functionality
-function playGame() {
-    // This would typically redirect to app store or open the game
-    alert('Redirecting to Google Play Store...');
-    // window.open('https://play.google.com/store/apps/details?id=your.app.id', '_blank');
-}
+// Play button functionality - Now handled by direct links to Play Store
+// Buttons link directly to: https://play.google.com/store/apps/details?id=com.ian.wordtemple&pcampaignid=web_share
 
 // Add some interactive effects
 document.addEventListener('mousemove', function(e) {
