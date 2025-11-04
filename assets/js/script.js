@@ -3,11 +3,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav');
+    const navMenu = document.querySelector('.nav-menu');
     
-    if (menuToggle) {
+    if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
     }
     
