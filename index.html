@@ -5,7 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Temple - Complete the Temple Challenge!</title>
     <meta name="description" content="Word Temple is now available to play from the Google Play Store! Download and Play Word Temple Now!">
+    <!-- Open Graph: improves Facebook/Twitter share previews -->
+    <meta property="og:title" content="Word Temple - Complete the Temple Challenge!" />
+    <meta property="og:description" content="Word Temple is now available to play from the Google Play Store! Download and Play Word Temple Now!" />
+    <meta property="og:image" content="https://eonwilsun.github.io/wordtemplesite/assets/Screenshot_20251104_084916_Expo%20Go.jpg" />
+    <meta property="og:url" content="https://eonwilsun.github.io/wordtemplesite/" />
+    <meta property="og:type" content="website" />
+    <!-- Optional: replace with your Facebook App ID if you use the JS SDK -->
+    <meta property="fb:app_id" content="REPLACE_WITH_FACEBOOK_APP_ID" />
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Meta Pixel Code (placed in head) -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1529445078404707');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1529445078404707&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <!-- Header -->
@@ -124,7 +149,9 @@
                     <h3>Stay connected for updates and events.</h3>
                     <div class="social-links">
                         <a href="https://www.facebook.com/wordtemplegame/" target="_blank" class="social-link">f</a>
-                        <a href="https://www.instagram.com/wordtemplegame" target="_blank" class="social-link">@</a>
+                            <a href="https://www.instagram.com/wordtemplegame" target="_blank" class="social-link">@</a>
+                            <!-- Facebook share button (uses SDK when available, falls back to sharer.php) -->
+                            <button class="social-link" id="fb-share-button" aria-label="Share on Facebook">Share</button>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -141,5 +168,31 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
+        <!-- Facebook JS SDK (optional richer sharing). Replace APP_ID if you have one. -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <script>
+            function fbShare() {
+                var url = 'https://eonwilsun.github.io/wordtemplesite/';
+                if (window.FB && FB.ui) {
+                    try {
+                        FB.ui({
+                            method: 'share',
+                            href: url
+                        }, function(response){});
+                        return;
+                    } catch(e) {
+                        // fallback below
+                    }
+                }
+                // Fallback: open Facebook sharer dialog
+                var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
+                window.open(shareUrl, 'fbshare', 'width=600,height=400');
+            }
+            document.addEventListener('DOMContentLoaded', function(){
+                var btn = document.getElementById('fb-share-button');
+                if (btn) btn.addEventListener('click', fbShare);
+            });
+        </script>
 </body>
 </html>
