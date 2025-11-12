@@ -214,7 +214,8 @@
         </script>
     
                 <!-- Cookie consent banner (re-added). Pixel loads only after user accepts -->
-                <div id="cookie-consent" class="cookie-consent" style="display:none;">
+                <!-- Default to visible so it can't be hidden by a failed script; script will hide it when consent exists. -->
+                <div id="cookie-consent" class="cookie-consent" style="display:flex;">
                     <p style="flex:1">We use Meta Pixel to measure visits and improve the site. Accept to enable analytics.</p>
                     <div style="display:flex;gap:8px;align-items:center">
                         <button id="consent-accept">Accept</button>
@@ -226,8 +227,9 @@
                         var banner = document.getElementById('cookie-consent');
                         try{
                             var consent = localStorage.getItem('wt_cookie_consent');
-                            if(!consent){ banner.style.display = 'flex'; }
-                            else { banner.style.display = 'none'; }
+                            console.log('cookie-consent: stored value =', consent);
+                            // If consent exists hide the banner; otherwise keep it visible (default is visible).
+                            if(consent){ banner.style.display = 'none'; }
                         }catch(e){ banner.style.display = 'flex'; }
 
                         function hide(){ if(banner) banner.style.display = 'none'; }
