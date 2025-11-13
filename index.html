@@ -26,6 +26,22 @@
                 .cookie-consent button{background:#fff;color:#111;border:0;padding:8px 12px;border-radius:6px;cursor:pointer}
                 .cookie-consent .decline{background:transparent;color:#ddd;border:1px solid rgba(255,255,255,.12)}
                 @media(max-width:520px){.cookie-consent{flex-direction:column;align-items:flex-start;padding:12px}}
+                
+                /* Video styling for demo section */
+                .game-screenshot {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                }
+                
+                /* Logo styling in navigation */
+                .logo img {
+                    transition: transform 0.2s ease;
+                }
+                .logo:hover img {
+                    transform: scale(1.1);
+                }
                 </style>
                 <script>
                 // Use the provided Pixel ID but only initialize after consent
@@ -55,7 +71,7 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="index.html" class="logo">Word Temple</a>
+                <a href="index.html" class="logo"><img src="assets/app-icon.png" alt="Word Temple" style="height: 40px; width: 40px; margin-right: 12px; vertical-align: middle;">Word Temple</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li><a href="privacy-policy.html" class="nav-link">Privacy Policy</a></li>
@@ -71,12 +87,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/feature-graphic.png'); background-size: cover; background-position: center;">
         <div class="container">
             <div class="hero-content">
                 <h1>Word Temple</h1>
-                <p class="hero-subtitle">Complete the Temple challenge!</p>
-                <a href="https://play.google.com/store/apps/details?id=com.ian.wordtemple&pcampaignid=web_share" target="_blank" class="cta-button">Play Now</a>
+                <p class="hero-subtitle">🏆 Test Your Brain Power! Can You Complete the Ultimate Word Challenge? 🏆</p>
+                <a href="https://play.google.com/store/apps/details?id=com.ian.wordtemple&pcampaignid=web_share" target="_blank" class="cta-button">Download FREE Now - Join Millions Playing!</a>
             </div>
         </div>
     </section>
@@ -84,9 +100,10 @@
     <!-- Download Section -->
     <section class="download-section">
         <div class="container">
-            <h2>Word Temple is now available to play from the Google Play Store!</h2>
-            <p>Download and Play Word Temple Now!</p>
-            <a href="https://play.google.com/store/apps/details?id=com.ian.wordtemple&pcampaignid=web_share" target="_blank" class="download-button">Play Now</a>
+            <h2>🎯 Ready for the Ultimate Word Challenge? 🎯</h2>
+            <p><strong>FREE Download</strong> • <strong>No Ads Interruptions</strong> • <strong>Offline Play</strong> • <strong>Global Leaderboards</strong></p>
+            <p>Join over 100,000 players who've already discovered the most addictive word puzzle game!</p>
+            <a href="https://play.google.com/store/apps/details?id=com.ian.wordtemple&pcampaignid=web_share" target="_blank" class="download-button">🚀 GET IT FREE - Download Now!</a>
         </div>
     </section>
 
@@ -96,12 +113,14 @@
             <h2 class="section-title">How to Play</h2>
             <div class="gameplay-grid">
                             <div class="game-demo">
-                                <img src="assets/screenshot-share.jpg" alt="Word Temple Game Demo" class="game-screenshot">
+                                <video src="assets/how-to-play-video.mp4" alt="Word Temple Game Demo" class="game-screenshot" controls autoplay muted loop poster="assets/screenshot-share.jpg"></video>
                             </div>
                 <div class="instructions">
-                    <h3>Use the letters provided in the grid to form and find the hidden words in the Temple rows.</h3>
-                    <p><strong>Complete all rows to win the game!</strong></p>
-                    <p>Be a part of the challenge and test your brain power!</p>
+                    <h3>🎮 Simple to Learn, Impossible to Master!</h3>
+                    <p><strong>✅ Use the letters in the grid to find hidden words</strong></p>
+                    <p><strong>🏆 Complete all Temple rows to WIN!</strong></p>
+                    <p><strong>🧠 Challenge yourself across 3 difficulty levels</strong></p>
+                    <p>Think you're smart enough? Most players can't get past level 5!</p>
                 </div>
             </div>
         </div>
@@ -110,7 +129,7 @@
     <!-- Difficulty Section -->
     <section class="difficulty-section">
         <div class="container">
-            <h2 class="section-title">It's Not as Easy as You Think!</h2>
+            <h2 class="section-title">⚡ Choose Your Challenge Level ⚡</h2>
             <div class="difficulty-grid">
                 <!-- Easy -->
                 <div class="difficulty-card">
@@ -119,7 +138,7 @@
                         <div class="phone-mockup">
                             <img src="assets/Screenshot_20251104_084853_Expo Go.jpg" alt="Word Temple Easy Mode" class="difficulty-screenshot">
                         </div>
-                        <p>Play on easy for the most relaxing and easiest time.</p>
+                        <p>🌟 <strong>Perfect for beginners!</strong> Start here and build your confidence. Great for a relaxing brain workout.</p>
                     </div>
                 </div>
 
@@ -130,7 +149,7 @@
                         <div class="phone-mockup">
                             <img src="assets/Screenshot_20251104_084924_Expo Go.jpg" alt="Word Temple Medium Mode" class="difficulty-screenshot">
                         </div>
-                        <p>Think easy is too easy! Why don't you try medium and see how hard this game really is.</p>
+                        <p>🔥 <strong>Most Popular Choice!</strong> Ready to prove you're smarter than average? This is where the real fun begins!</p>
                     </div>
                 </div>
 
@@ -141,7 +160,7 @@
                         <div class="phone-mockup">
                             <img src="assets/Screenshot_20251104_084932_Expo Go.jpg" alt="Word Temple Hard Mode" class="difficulty-screenshot">
                         </div>
-                        <p>Join the small percentage of people that can achieve the impossible and complete the temple challenge on hard.</p>
+                        <p>💀 <strong>Only 2% Complete This!</strong> Think you're a word genius? Prove it! Warning: Extremely addictive.</p>
                     </div>
                 </div>
 
@@ -152,7 +171,7 @@
                         <div class="phone-mockup">
                             <img src="assets/Screenshot_20251104_084942_Expo Go.jpg" alt="Word Temple Leaderboards" class="difficulty-screenshot">
                         </div>
-                        <p>See if you are good enough to get on the leaderboards.</p>
+                        <p>🏆 <strong>Compete Globally!</strong> Beat players worldwide and claim your spot at the top. Are you #1 material?</p>
                     </div>
                 </div>
             </div>
