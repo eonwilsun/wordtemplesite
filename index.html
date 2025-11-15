@@ -45,8 +45,9 @@
                 </style>
                 <script>
                 // Use the provided Pixel ID but only initialize after consent
-                // NOTE: Pixel will only be loaded after the user accepts via the consent banner.
+                // NOTE: Pixel and Google tags will only be loaded after the user accepts via the consent banner.
                 var WT_PIXEL_ID = '1529445078404707';
+                var AW_GTAG_ID = 'AW-17732908450';
 
                 function loadFacebookPixel(){
                     if(window.fbq) return; // already loaded
@@ -57,11 +58,30 @@
                     try{fbq('init', WT_PIXEL_ID);fbq('track','PageView');}catch(e){console.warn('FB Pixel load failed',e)}
                 }
 
+                // Load Google gtag (conversion tracking) after consent
+                function loadGtag(){
+                    if(window.gtag) return; // already loaded
+                    try{
+                        var s = document.createElement('script');
+                        s.async = true;
+                        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + AW_GTAG_ID;
+                        document.head.appendChild(s);
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);} // local alias
+                        window.gtag = gtag;
+                        gtag('js', new Date());
+                        gtag('config', AW_GTAG_ID);
+                    }catch(e){console.warn('GTag load failed', e)}
+                }
+
                 // Auto-load pixel if user already consented
                 (function(){
                     try{
                         var consent = localStorage.getItem('wt_cookie_consent');
-                        if(consent === 'yes') loadFacebookPixel();
+                        if(consent === 'yes'){
+                            loadFacebookPixel();
+                            loadGtag();
+                        }
                     }catch(e){}
                 })();
                 </script>
